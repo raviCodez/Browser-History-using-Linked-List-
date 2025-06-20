@@ -15,5 +15,12 @@ public class Node {
         next = null;
         back=null;
     }
+    Node(String val, Node nextNode, Node backNode) {
+        data = val;
+        next = nextNode;
+        back = backNode;
+    }
+
+
 
 }
