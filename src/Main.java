@@ -2,14 +2,23 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        BrowserHistory browserHistory = new BrowserHistory();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        // Simulate visiting pages
+        browserHistory.homePage("google.com");
+        browserHistory.vist("stackoverflow.com");
+        browserHistory.vist("github.com");
+
+        // Go back two steps
+        Node current = browserHistory.back(2);
+        System.out.println("Current page after going back: " + current.data);
+
+        // Go forward one step
+        current = browserHistory.forward(1);
+        System.out.println("Current page after going forward: " + current.data);
+
+        // Visit a new page
+        current = browserHistory.vist("reddit.com");
+        System.out.println("Current page after visiting new page: " + current.data);
     }
 }
