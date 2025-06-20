@@ -1,8 +1,19 @@
+import  java.utlil.ArrayList;
+import java.util.List;
 public class Node {
-    Node val;
+    String data;
     Node next;
-    Node(Node val) {
-        this.val = val;
-        this.next = null;
+    Node back;
+
+    Node (){
+        data="0";
+        next=null;
+        back=null;
     }
+    Node(String val) {
+        data = val;
+        next = null;
+        back=null;
+    }
+
 }
